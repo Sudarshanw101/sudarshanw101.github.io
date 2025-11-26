@@ -1,257 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudarshan Wagh – Mold Design & CAD Engineer</title>
 
-  <!-- ========== META / SEO ========== -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudarshan Wagh — Mold Design & CAD Engineer</title>
+<style>
+body{
+  margin:0; background:#0e0e13; color:#fff; font-family:sans-serif;
+}
 
-  <meta name="description" content="Portfolio of Sudarshan Wagh — Mold Design Engineer, CAD/CAE Specialist, Automotive Plastic Design, Tooling & DFM Expert.">
-  <meta name="keywords" content="Mold Design, CAD Engineer, Automotive Plastic Design, NX, Creo, CAM, Core Cavity, Parting Line, DFM, Sudarshan Wagh">
+/* ===== NAV ===== */
+nav{
+  position:sticky; top:0; z-index:100;
+  padding:20px; background:rgba(20,20,28,0.85); backdrop-filter:blur(10px);
+  display:flex; justify-content:space-between; align-items:center;
+}
+nav a{ color:#fff; margin-left:20px; text-decoration:none; }
+.btn{ background:#00e4c0; padding:10px 20px; border-radius:8px; color:#000; font-weight:bold; }
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Sudarshan Wagh — Mold Design & CAD Engineer">
-  <meta property="og:description" content="Portfolio of a Mold Design Engineer specializing in automotive plastics, tooling, CAD and DFM.">
-  <meta property="og:image" content="profile.webp">
-  <meta property="og:type" content="website">
+/* ===== SECTIONS ===== */
+section{ padding:80px 0; width:90%; margin:auto; max-width:1200px; }
 
-  <!-- ========== GENERAL STYLING ========== -->
-  <style>
+/* ===== HERO ===== */
+.hero{text-align:center;}
+.hero img{
+  width:150px; height:150px; border-radius:50%;
+  border:4px solid #00e4c0;
+}
 
-    /* ===================== GLOBAL ===================== */
-    * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
-    body { background:#0f0f14; color:#fff; overflow-x:hidden; }
-    img { max-width:100%; height:auto; }
+/* ===== WORKSTATION SVG ===== */
+.workstation-container{
+  display:flex; justify-content:center; align-items:center;
+}
+.workstation-svg{
+  width:100%; max-width:900px;
+}
 
-    .container { width:90%; margin:auto; max-width:1200px; }
+/* Fade */
+.fade{ opacity:0; transform:translateY(20px); transition:1s; }
+.fade.visible{ opacity:1; transform:none; }
 
-    /* Fade-in */
-    .fade { opacity:0; transform:translateY(20px); transition:1s ease; }
-    .fade.visible { opacity:1; transform:none; }
+/* Gallery */
+.gallery-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;
+}
+.gallery-grid img{ width:100%; border-radius:12px; }
 
-    /* ===================== NAV ===================== */
-    nav{
-      width:100%;
-      padding:20px 0;
-      position:sticky;
-      top:0;
-      background:rgba(20,20,28,0.8);
-      backdrop-filter:blur(10px);
-      z-index:1000;
-    }
-    nav .container{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    nav a{
-      color:white; margin-left:20px; text-decoration:none; 
-      font-weight:500; transition:0.3s;
-    }
-    nav a:hover{ color:#66f7d4; }
+/* Contact */
+input,textarea{
+  width:100%; padding:15px; border-radius:8px; background:#1a1a22; color:#fff;
+  border:1px solid #333; margin-bottom:10px;
+}
+button{ padding:12px 24px; background:#00e4c0; border:0; border-radius:8px; }
 
-    .btn{
-      padding:12px 24px;
-      background:#00d4a8;
-      color:#000; border-radius:8px;
-      font-weight:600; text-decoration:none;
-      display:inline-block;
-      transition:0.3s;
-    }
-    .btn:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,255,200,0.3); }
+footer{text-align:center; padding:20px; background:#0f0f14;}
+</style>
 
-    /* ===================== HERO ===================== */
-    .hero{
-      padding:120px 0 80px;
-      text-align:center;
-    }
-    .hero img{
-      width:160px; height:160px;
-      border-radius:50%; border:4px solid #00e5c4;
-      margin-bottom:20px;
-    }
-    .hero h1{ font-size:42px; margin-bottom:10px; }
-    .hero p{ font-size:18px; opacity:0.8; margin-bottom:20px; }
-    .hero .btns{ margin-top:20px; display:flex; justify-content:center; gap:20px; }
-
-    /* ===================== SKILLS ===================== */
-    .skills{ padding:80px 0; }
-    .skills-grid{ 
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;
-    }
-    .skill-card{
-      padding:30px; border-radius:15px;
-      background:#1c1d26; border:1px solid #2d2e38;
-      text-align:center; transition:0.3s;
-    }
-    .skill-card:hover{ transform:translateY(-8px); }
-
-    /* ===================== PROJECTS ===================== */
-    .projects{ padding:80px 0; }
-    .project-card{
-      background:#1c1d26; border:1px solid #2d2e38;
-      padding:20px; border-radius:12px;
-      transition:0.3s;
-    }
-    .project-card:hover{ transform:translateY(-6px); }
-
-    /* ===================== GALLERY ===================== */
-    .gallery{ padding:80px 0; }
-    .gallery-grid{
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px;
-    }
-    .gallery-grid img{
-      border-radius:12px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-    .gallery-grid img:hover{ transform:scale(1.05); }
-
-    /* ===================== CONTACT ===================== */
-    .contact{ padding:80px 0; text-align:center; }
-    .contact input, .contact textarea{
-      width:100%; padding:15px; border-radius:10px;
-      background:#1b1b23; border:1px solid #333;
-      margin-bottom:15px; color:white;
-    }
-
-    /* ===================== FOOTER ===================== */
-    footer{
-      padding:20px; text-align:center;
-      background:#101015; color:#aaa; margin-top:40px;
-    }
-
-    /* ===================== CINEMATIC WORKSTATION ANIMATION ===================== */
-    .workstation-section{
-      padding:100px 0;
-      display:flex; justify-content:center; 
-    }
-    .workstation-svg{
-      width:100%; max-width:900px;
-    }
-
-  </style>
 </head>
 <body>
 
-<!-- ===================== NAV ===================== -->
+<!-- ================= NAV ================= -->
 <nav>
-  <div class="container">
-    <div class="logo">Sudarshan Wagh</div>
-    <div>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn">Hire Me</a>
-    </div>
+  <div class="logo">Sudarshan Wagh</div>
+  <div>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn">Hire Me</a>
   </div>
 </nav>
 
-<!-- ===================== HERO ===================== -->
+<!-- ================= HERO ================= -->
 <section class="hero fade">
-  <div class="container">
-    <img src="profile.webp" loading="lazy" alt="">
-    <h1>Mold Design Engineer & CAD Specialist</h1>
-    <p>Automotive | Plastic Tooling | Core–Cavity | Parting Lines | DFM</p>
+  <img src="https://via.placeholder.com/200x200.png?text=Profile" alt="Profile">
+  <h1>Mold Design Engineer & CAD Specialist</h1>
+  <p>Automotive Plastic Design | Tooling | DFM | Core & Cavity</p>
+</section>
 
-    <div class="btns">
-      <a class="btn" href="cv.pdf" download>Download CV</a>
-      <a class="btn" href="#contact">Hire Me</a>
-    </div>
+<!-- ================ 3D CINEMATIC WORKSTATION ANIMATION ================ -->
+<section class="fade">
+<div class="workstation-container">
+
+<!-- FULL SVG ANIMATION -->
+<svg class="workstation-svg" viewBox="0 0 900 600">
+
+<defs>
+  <radialGradient id="screenGlow" cx="50%" cy="50%" r="80%">
+    <stop offset="0%" stop-color="rgba(0,255,190,0.25)" />
+    <stop offset="100%" stop-color="rgba(0,255,190,0)" />
+  </radialGradient>
+
+  <linearGradient id="surfaceStroke">
+    <stop offset="0%" stop-color="#00d2ff"/>
+    <stop offset="100%" stop-color="#008cff"/>
+  </linearGradient>
+
+  <linearGradient id="partingGrad">
+    <stop offset="0%" stop-color="#00ff8c"/>
+    <stop offset="100%" stop-color="#00c46a"/>
+  </linearGradient>
+</defs>
+
+<!-- MONITOR -->
+<polygon points="250,160 650,160 700,350 200,350"
+  fill="#1e1f26" stroke="#444" stroke-width="5"></polygon>
+
+<ellipse cx="450" cy="250" rx="260" ry="130" fill="url(#screenGlow)" opacity="0.4"></ellipse>
+
+<!-- === CAD Animation === -->
+<g id="cad">
+
+<!-- Car Hood outline -->
+<path id="hood" d="
+  M260,260 
+  C340,150 560,150 640,260
+  C580,310 400,330 310,290
+  C290,280 275,270 260,260
+"
+fill="none" stroke="url(#surfaceStroke)" stroke-width="6"
+stroke-linecap="round" stroke-dasharray="900" stroke-dashoffset="900">
+</path>
+
+<!-- Parting Line -->
+<path id="parting" d="
+  M300,240 C420,210 520,210 620,240
+"
+fill="none" stroke="url(#partingGrad)" stroke-width="5"
+stroke-dasharray="900" stroke-dashoffset="900" opacity="0">
+</path>
+
+<!-- Core -->
+<path id="core" d="
+  M260,260 
+  C340,150 560,150 640,260
+  C580,310 400,330 310,290
+  C290,280 275,270 260,260
+"
+fill="rgba(255,140,0,0.35)" stroke="rgba(255,140,0,1)" stroke-width="4"
+opacity="0" transform-origin="450 250">
+</path>
+
+<!-- Cavity -->
+<path id="cavity" d="
+  M260,260 
+  C340,150 560,150 640,260
+  C580,310 400,330 310,290
+  C290,280 275,270 260,260
+"
+fill="rgba(150,50,255,0.35)" stroke="rgba(150,50,255,1)" stroke-width="4"
+opacity="0" transform-origin="450 250">
+</path>
+
+</g>
+</svg>
+
+</div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="fade">
+  <h2>Skills</h2>
+  <p>Injection Mold Design, Core & Cavity, Parting Line, Automotive Plastic CAD</p>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="fade">
+  <h2>Projects</h2>
+  <p>Automotive Plastic Tooling, Product Enclosure, 3D Surface Modeling</p>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="fade">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://via.placeholder.com/400x300.png?text=CAD+1">
+    <img src="https://via.placeholder.com/400x300.png?text=CAD+2">
+    <img src="https://via.placeholder.com/400x300.png?text=CAD+3">
+    <img src="https://via.placeholder.com/400x300.png?text=CAD+4">
   </div>
 </section>
 
-<!-- ===================== NEW CINEMATIC 3D WORKSTATION ANIMATION ===================== -->
-<section class="workstation-section fade">
-  <div class="container">
-
-    <!-- FINAL ANIMATION YOU APPROVED — INSERTED HERE -->
-    <!-- (Same code from previous message, not repeated to save space) -->
-    <!-- Paste the entire <svg> + styles + JS from last message HERE -->
-
-  </div>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="fade">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <textarea rows="5" placeholder="Message"></textarea>
+    <button>Send</button>
+  </form>
 </section>
 
-<!-- ===================== SKILLS ===================== -->
-<section id="skills" class="skills fade">
-  <div class="container">
-    <h2>Skills</h2><br><br>
-
-    <div class="skills-grid">
-      <div class="skill-card">Injection Mold Design</div>
-      <div class="skill-card">Automotive Plastic CAD</div>
-      <div class="skill-card">DFM & DFA</div>
-      <div class="skill-card">NX / Creo / SolidWorks</div>
-      <div class="skill-card">Core & Cavity Creation</div>
-      <div class="skill-card">Parting Line / Parting Surface</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PROJECTS ===================== -->
-<section id="projects" class="projects fade">
-  <div class="container">
-    <h2>Projects</h2><br><br>
-
-    <div class="project-card">
-      <h3>Automotive Plastic Part Tooling</h3>
-      <p>Full mold design: gating, cooling, splits, lifters, slides, BOM.</p>
-    </div>
-
-    <br>
-
-    <div class="project-card">
-      <h3>Product Enclosure Design</h3>
-      <p>Surface modeling, draft, ribs, bosses, mounting features.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== GALLERY ===================== -->
-<section id="gallery" class="gallery fade">
-  <div class="container">
-    <h2>Gallery</h2><br><br>
-
-    <div class="gallery-grid">
-      <img loading="lazy" src="g1.webp">
-      <img loading="lazy" src="g2.webp">
-      <img loading="lazy" src="g3.webp">
-      <img loading="lazy" src="g4.webp">
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== CONTACT ===================== -->
-<section id="contact" class="contact fade">
-  <div class="container">
-    <h2>Contact Me</h2><br><br>
-
-    <form action="mailto:sudarshan@example.com" method="POST">
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Email">
-      <textarea rows="5" placeholder="Message"></textarea>
-      <button class="btn" type="submit">Send</button>
-    </form>
-
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
 <footer>
-  © 2025 Sudarshan Wagh — All Rights Reserved
+  © 2025 Sudarshan Wagh
 </footer>
 
-<!-- ===================== FADE-IN SCRIPT ===================== -->
+<!-- ================= JS (Animation + Fade) ================= -->
 <script>
-document.addEventListener("scroll", () => {
-  document.querySelectorAll(".fade").forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100)
-      el.classList.add("visible");
+// Fade
+document.addEventListener("scroll",()=>{
+  document.querySelectorAll(".fade").forEach(e=>{
+    if(e.getBoundingClientRect().top < window.innerHeight-80)
+      e.classList.add("visible");
   });
 });
+
+// CAD Animation Loop
+function animateCAD(){
+  let hood=document.getElementById("hood"),
+      part=document.getElementById("parting"),
+      core=document.getElementById("core"),
+      cavity=document.getElementById("cavity");
+
+  hood.style.transition="none";
+  part.style.transition="none";
+  core.style.transition="none";
+  cavity.style.transition="none";
+
+  hood.style.strokeDashoffset=900;
+  part.style.strokeDashoffset=900;
+  part.style.opacity=0;
+  core.style.opacity=0;
+  cavity.style.opacity=0;
+  core.style.transform="translate(0,0)";
+  cavity.style.transform="translate(0,0)";
+
+  setTimeout(()=>{
+    hood.style.transition="stroke-dashoffset 2s ease";
+    hood.style.strokeDashoffset=0;
+  },100);
+
+  setTimeout(()=>{
+    part.style.opacity=1;
+    part.style.transition="stroke-dashoffset 1.5s ease";
+    part.style.strokeDashoffset=0;
+  },2200);
+
+  setTimeout(()=>{
+    core.style.transition="opacity 1s";
+    cavity.style.transition="opacity 1s";
+    core.style.opacity=1;
+    cavity.style.opacity=1;
+  },3800);
+
+  setTimeout(()=>{
+    core.style.transition="transform 1.5s ease";
+    cavity.style.transition="transform 1.5s ease";
+    core.style.transform="translate(-25px,-20px)";
+    cavity.style.transform="translate(25px,20px)";
+  },4500);
+
+  setTimeout(animateCAD,6000);
+}
+animateCAD();
 </script>
 
 </body>
