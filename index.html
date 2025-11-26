@@ -245,21 +245,28 @@
     });
     function hideLightbox(){ document.getElementById('lightbox').style.display='none'; }
 
-    // Contact form: mailto fallback
-    function submitForm(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if(!name||!email||!message){ document.getElementById('form-msg').textContent = 'Please fill all fields.'; return; }
-      const subject = encodeURIComponent('Website inquiry from ' + name);
-      const body = encodeURIComponent('Name: '+name+'
-Email: '+email+'
+// Contact form: mailto fallback
+function submitForm(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
 
-'+message);
-      window.location.href = 'mailto:ms2.designtech@gmail.com?subject='+subject+'&body='+body;
-      document.getElementById('form-msg').textContent = 'Opening mail app to send message...';
-    }
+  if(!name || !email || !message){
+    document.getElementById('form-msg').textContent = 'Please fill all fields.';
+    return;
+  }
+
+  const subject = encodeURIComponent('Website inquiry from ' + name);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n\n' +
+    message
+  );
+
+  window.location.href = 'mailto:ms2.designtech@gmail.com?subject=' + subject + '&body=' + body;
+  document.getElementById('form-msg').textContent = 'Opening mail app to send message...';
+}
 
     // animate skill bars on load
     function animateSkills(){
@@ -291,4 +298,5 @@ Email: '+email+'
     });
   </script>
 </body>
+
 </html>
