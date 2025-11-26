@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sudarshan Wagh — MS² DesignTech</title>
   <meta name="description" content="Sudarshan Wagh — NPD Engineer & Mold Designer. Services: Mold design, DFM, CAM programming. Portfolio and resume." />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{--bg1:#071124;--bg2:#0b1530;--card:rgba(255,255,255,0.03);--accent:#2dd4bf;--muted:#9aa6b2;--glass:rgba(255,255,255,0.03)}
@@ -26,7 +25,7 @@
     .grid{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:18px}
     .card{background:var(--card);padding:16px;border-radius:12px}
     .section-title{font-size:18px;margin:0 0 8px 0}
-    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skills-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
     .skill-pill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:var(--muted);font-size:13px}
     .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     .proj-card{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.005));transition:transform .25s}
@@ -35,9 +34,6 @@
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
     .gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .35s,box-shadow .35s}
     .gallery img:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
-    .skill-row{margin:10px 0}
-    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
-    .bar .fill{height:100%;background:linear-gradient(90deg,var(--accent),#45e6c8);width:0%;transition:width 1s ease}
     .timeline{margin-top:12px;border-left:2px solid rgba(255,255,255,0.03);padding-left:14px}
     .tl-item{position:relative;margin:14px 0;padding-left:10px}
     .tl-item:before{content:'';position:absolute;left:-11px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(45,212,191,0.06)}
@@ -56,7 +52,12 @@
     .delay-2{animation-delay:.22s}
     .delay-3{animation-delay:.32s}
     @keyframes fadeIn{to{opacity:1;transform:none}}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
+    /* ---- Mold cavity skill visuals ---- */
+    .mold-skill{width:180px;background:linear-gradient(180deg,rgba(255,255,255,0.015),rgba(255,255,255,0.01));padding:12px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:8px}
+    .mold-skill svg{width:140px;height:90px;display:block}
+    .mold-label{font-size:13px;color:var(--muted);text-align:center}
+    .mold-percent{font-weight:700;color:var(--accent)}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)} .mold-skill{width:46%}}
   </style>
 </head>
 <body>
@@ -171,18 +172,147 @@
           </div>
 
           <h4 style="margin-top:12px">Skill Proficiency</h4>
-          <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>NX</div><div>90%</div></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-          <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>CATIA</div><div>70%</div></div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
-          <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>Creo</div><div>80%</div></div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-          <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>Mold Wizard</div><div>85%</div></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-          <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>CAM</div><div>75%</div></div><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-          <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>DFM</div><div>80%</div></div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
 
-          <h4 style="margin-top:12px">Education</h4>
-          <ul style="color:var(--muted);margin-top:8px;line-height:1.6">
-            <li><strong>Diploma in Mechanical Engineering (DPMT)</strong> — CIPET; <em>79%</em></li>
-            <li><strong>SSC (10th Standard)</strong> — Maharashtra State Board; <em>79.40%</em></li>
-          </ul>
+          <!-- NEW: Mold cavity style skill visuals (custom industrial part) -->
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:10px">
+            <!-- Each .mold-skill uses data-percent to set the fill -->
+            <div class="mold-skill" data-percent="90" data-label="NX">
+              <!-- SVG shape: stylized industrial part outline -->
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- define clip path from the part shape -->
+                <defs>
+                  <clipPath id="partClip1">
+                    <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" />
+                  </clipPath>
+                </defs>
+                <!-- background outline -->
+                <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <!-- fill rect that will be clipped to the part shape -->
+                <g clip-path="url(#partClip1)">
+                  <rect class="mold-fill" x="0" y="0" width="200" height="120" fill="url(#grad1)"></rect>
+                </g>
+                <defs>
+                  <linearGradient id="grad1" x1="0" x2="0" y1="1" y2="0">
+                    <stop offset="0%" stop-color="#04393a"/>
+                    <stop offset="100%" stop-color="#2dd4bf"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="mold-label">NX</div>
+              <div class="mold-percent">90%</div>
+            </div>
+
+            <div class="mold-skill" data-percent="70" data-label="CATIA">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="partClip2">
+                    <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" />
+                  </clipPath>
+                </defs>
+                <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <g clip-path="url(#partClip2)">
+                  <rect class="mold-fill" x="0" y="0" width="200" height="120" fill="url(#grad2)"></rect>
+                </g>
+                <defs>
+                  <linearGradient id="grad2" x1="0" x2="0" y1="1" y2="0">
+                    <stop offset="0%" stop-color="#04393a"/>
+                    <stop offset="100%" stop-color="#2dd4bf"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="mold-label">CATIA</div>
+              <div class="mold-percent">70%</div>
+            </div>
+
+            <div class="mold-skill" data-percent="80" data-label="Creo">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="partClip3">
+                    <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" />
+                  </clipPath>
+                </defs>
+                <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <g clip-path="url(#partClip3)">
+                  <rect class="mold-fill" x="0" y="0" width="200" height="120" fill="url(#grad3)"></rect>
+                </g>
+                <defs>
+                  <linearGradient id="grad3" x1="0" x2="0" y1="1" y2="0">
+                    <stop offset="0%" stop-color="#04393a"/>
+                    <stop offset="100%" stop-color="#2dd4bf"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="mold-label">Creo</div>
+              <div class="mold-percent">80%</div>
+            </div>
+
+            <div class="mold-skill" data-percent="85" data-label="Mold Wizard">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="partClip4">
+                    <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" />
+                  </clipPath>
+                </defs>
+                <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <g clip-path="url(#partClip4)">
+                  <rect class="mold-fill" x="0" y="0" width="200" height="120" fill="url(#grad4)"></rect>
+                </g>
+                <defs>
+                  <linearGradient id="grad4" x1="0" x2="0" y1="1" y2="0">
+                    <stop offset="0%" stop-color="#04393a"/>
+                    <stop offset="100%" stop-color="#2dd4bf"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="mold-label">Mold Wizard</div>
+              <div class="mold-percent">85%</div>
+            </div>
+
+            <div class="mold-skill" data-percent="75" data-label="CAM">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="partClip5">
+                    <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" />
+                  </clipPath>
+                </defs>
+                <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <g clip-path="url(#partClip5)">
+                  <rect class="mold-fill" x="0" y="0" width="200" height="120" fill="url(#grad5)"></rect>
+                </g>
+                <defs>
+                  <linearGradient id="grad5" x1="0" x2="0" y1="1" y2="0">
+                    <stop offset="0%" stop-color="#04393a"/>
+                    <stop offset="100%" stop-color="#2dd4bf"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="mold-label">CAM</div>
+              <div class="mold-percent">75%</div>
+            </div>
+
+            <div class="mold-skill" data-percent="80" data-label="DFM">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="partClip6">
+                    <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" />
+                  </clipPath>
+                </defs>
+                <path d="M10 30 C10 20 22 10 40 12 L60 15 C75 18 82 25 98 25 L150 25 C170 25 185 40 180 60 C176 80 160 88 140 88 L80 90 C60 92 45 86 30 82 C18 79 10 68 10 50 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <g clip-path="url(#partClip6)">
+                  <rect class="mold-fill" x="0" y="0" width="200" height="120" fill="url(#grad6)"></rect>
+                </g>
+                <defs>
+                  <linearGradient id="grad6" x1="0" x2="0" y1="1" y2="0">
+                    <stop offset="0%" stop-color="#04393a"/>
+                    <stop offset="100%" stop-color="#2dd4bf"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="mold-label">DFM</div>
+              <div class="mold-percent">80%</div>
+            </div>
+
+          </div>
 
         </section>
 
@@ -245,38 +375,50 @@
     });
     function hideLightbox(){ document.getElementById('lightbox').style.display='none'; }
 
-// Contact form: mailto fallback
-function submitForm(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+    // Contact form: mailto fallback
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ document.getElementById('form-msg').textContent = 'Please fill all fields.'; return; }
+      const subject = encodeURIComponent('Website inquiry from ' + name);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        message
+      );
+      window.location.href = 'mailto:ms2.designtech@gmail.com?subject='+subject+'&body='+body;
+      document.getElementById('form-msg').textContent = 'Opening mail app to send message...';
+    }
 
-  if(!name || !email || !message){
-    document.getElementById('form-msg').textContent = 'Please fill all fields.';
-    return;
-  }
-
-  const subject = encodeURIComponent('Website inquiry from ' + name);
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n\n' +
-    message
-  );
-
-  window.location.href = 'mailto:ms2.designtech@gmail.com?subject=' + subject + '&body=' + body;
-  document.getElementById('form-msg').textContent = 'Opening mail app to send message...';
-}
-
-    // animate skill bars on load
-    function animateSkills(){
-      document.querySelectorAll('.bar .fill').forEach(el=>{
-        const w = el.style.width || '0%';
-        el.style.width = '0%';
-        setTimeout(()=>el.style.width = w,100);
+    // animate mold fills
+    function animateMoldFills(){
+      document.querySelectorAll('.mold-skill').forEach((el, idx) => {
+        const percent = parseInt(el.getAttribute('data-percent') || '0',10);
+        const svg = el.querySelector('svg');
+        const fillRect = svg.querySelector('.mold-fill');
+        // compute targetY so that visible fill equals percent
+        // rect covers full svg (height 120) — we move it with translateY to reveal from bottom
+        const svgHeight = 120;
+        const visible = Math.max(0, Math.min(100, percent));
+        const hideHeight = Math.round(svgHeight * (100 - visible) / 100);
+        // place rect so top is -hideHeight (move up) by setting transform
+        // use CSS transform for smoother animation
+        // initial set to fully hidden
+        fillRect.style.transform = 'translateY(' + svgHeight + 'px)';
+        fillRect.style.transition = 'transform 900ms cubic-bezier(.2,.9,.3,1)';
+        // small delay per item
+        setTimeout(()=> {
+          fillRect.style.transform = 'translateY(' + hideHeight + 'px)';
+          // update percent text visually
+          const percentNode = el.querySelector('.mold-percent');
+          if(percentNode) percentNode.textContent = visible + '%';
+        }, 200 + idx * 120);
       });
     }
-    window.addEventListener('load', animateSkills);
+
+    window.addEventListener('load', animateMoldFills);
 
     // theme toggle (simple)
     function toggleTheme(){
@@ -288,7 +430,7 @@ function submitForm(e){
       }
     }
 
-    // smooth reveal for fade elements
+    // animate other fades (simple reveal)
     document.addEventListener('DOMContentLoaded', function(){
       const reveal = document.querySelectorAll('.fade');
       const obs = new IntersectionObserver(entries=>{
@@ -296,7 +438,7 @@ function submitForm(e){
       },{threshold:0.12});
       reveal.forEach(r=>{ r.classList.add('hidden'); obs.observe(r); });
     });
+
   </script>
 </body>
-
 </html>
