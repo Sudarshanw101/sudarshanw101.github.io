@@ -58,6 +58,101 @@
     .mold-label{font-size:13px;color:var(--muted);text-align:center}
     .mold-percent{font-weight:700;color:var(--accent)}
     @media(max-width:880px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)} .mold-skill{width:46%}}
+    /* CAD Designer Animation Block */
+.cad-designer-anim{
+    width:100%;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:20px;
+}
+
+.designer-figure{
+    position:relative;
+    width:260px;
+    height:260px;
+}
+
+.desk{
+    width:100%;
+    height:20px;
+    background:#2d3343;
+    position:absolute;
+    bottom:0;
+    border-radius:4px;
+}
+
+.monitor{
+    width:200px;
+    height:150px;
+    background:#0f141d;
+    border:3px solid #3baaff;
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:8px;
+    padding:10px;
+}
+
+.part-svg{
+    width:100%;
+    height:100%;
+    overflow:visible;
+}
+
+/* Part Outline */
+.part-outline{
+    fill:none;
+    stroke:#3baaff;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:500;
+    stroke-dashoffset:500;
+    animation:drawOutline 2s ease forwards;
+}
+
+/* Parting Line */
+.parting-line{
+    stroke:#00f6a7;
+    stroke-width:3;
+    stroke-dasharray:200;
+    stroke-dashoffset:200;
+    animation:drawPartingLine 2s ease forwards 1s;
+}
+
+/* Core & Cavity animation */
+.core-half, .cavity-half{
+    fill:#00f6a726;
+    stroke:#00f6a7;
+    stroke-width:2;
+    opacity:0;
+    transform-origin:center;
+    animation:splitParts 1.8s ease forwards 2.2s;
+}
+
+.core-half{
+    transform:translateX(-8px);
+}
+
+.cavity-half{
+    transform:translateX(8px);
+}
+
+@keyframes drawOutline{
+    to{ stroke-dashoffset:0; }
+}
+
+@keyframes drawPartingLine{
+    to{ stroke-dashoffset:0; }
+}
+
+@keyframes splitParts{
+    0%{ opacity:0; transform:translateX(0); }
+    100%{ opacity:1; }
+}
   </style>
 </head>
 <body>
@@ -339,6 +434,26 @@
           <a class="btn" href="https://wa.me/918010323462" target="_blank">Message on WhatsApp</a>
         </div>
 
+<div class="cad-designer-anim">
+    <div class="designer-figure">
+        <div class="desk"></div>
+        <div class="monitor">
+            <svg viewBox="0 0 200 200" class="part-svg simple-part">
+                <path class="part-outline" d="M20 60 L180 60 L180 140 L20 140 Z" />
+                <path class="parting-line" d="M20 100 L180 100" />
+                <path class="core-half" d="M20 60 L100 60 L100 140 L20 140 Z" />
+                <path class="cavity-half" d="M100 60 L180 60 L180 140 L100 140 Z" />
+            </svg>
+
+            <svg viewBox="0 0 200 200" class="part-svg auto-part">
+                <path class="part-outline" d="M40 120 C40 80, 80 40, 140 60 C160 80, 150 110, 130 130 C110 150, 60 150, 40 120 Z"/>
+                <path class="parting-line" d="M40 120 C40 100, 80 90, 130 100" />
+                <path class="core-half" d="M40 120 C40 100, 80 90, 100 110 L60 140 Z" />
+                <path class="cavity-half" d="M100 110 C120 100, 130 90, 130 130 L90 150 Z" />
+            </svg>
+        </div>
+    </div>
+</div>
         <div class="card contact-form" style="margin-top:12px">
           <h4 style="margin:0 0 8px 0">Contact Form</h4>
           <form onsubmit="submitForm(event)">
@@ -442,3 +557,4 @@
   </script>
 </body>
 </html>
+
