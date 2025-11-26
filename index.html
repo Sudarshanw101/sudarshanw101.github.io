@@ -4,21 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sudarshan Wagh — MS² DesignTech</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Sudarshan Wagh — NPD Engineer & Mold Designer. Services: Mold design, DFM, CAM programming. Portfolio and resume." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg1:#071124; --bg2:#0b1530; --card:rgba(255,255,255,0.03);
-      --accent:#2dd4bf; --muted:#9aa6b2; --glass:rgba(255,255,255,0.03);
-    }
+    :root{--bg1:#071124;--bg2:#0b1530;--card:rgba(255,255,255,0.03);--accent:#2dd4bf;--muted:#9aa6b2;--glass:rgba(255,255,255,0.03)}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e7f1fb;-webkit-font-smoothing:antialiased;line-height:1.4}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e7f1fb;-webkit-font-smoothing:antialiased}
     .wrap{max-width:1100px;margin:36px auto;padding:28px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));backdrop-filter:blur(6px);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
     header{display:flex;gap:18px;align-items:center}
     .avatar{width:110px;height:110px;border-radius:16px;overflow:hidden;border:3px solid rgba(255,255,255,0.06);flex:0 0 110px}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    h1{font-family:'Playfair Display',serif;margin:0;font-size:28px}
+    h1{font-family:'Playfair Display',serif;margin:0;font-size:30px}
     .subtitle{color:var(--muted);margin-top:6px}
     .top-actions{margin-left:auto;text-align:right}
     .btn{background:var(--accent);color:#022;display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
@@ -35,34 +33,30 @@
     .proj-card:hover{transform:translateY(-6px)}
     .proj-thumb{width:110px;height:80px;object-fit:cover;border-radius:8px}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .35s}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .35s,box-shadow .35s}
     .gallery img:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
-    /* skill bar */
     .skill-row{margin:10px 0}
     .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
     .bar .fill{height:100%;background:linear-gradient(90deg,var(--accent),#45e6c8);width:0%;transition:width 1s ease}
     .timeline{margin-top:12px;border-left:2px solid rgba(255,255,255,0.03);padding-left:14px}
     .tl-item{position:relative;margin:14px 0;padding-left:10px}
     .tl-item:before{content:'';position:absolute;left:-11px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(45,212,191,0.06)}
-    /* contact */
     .contact-form input,.contact-form textarea{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6fb}
     .contact-form button{background:var(--accent);color:#022;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
     footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
     .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,0.4);z-index:1200}
     .whatsapp a{color:white;text-decoration:none;font-weight:700}
-    /* lightbox */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:1500}
     .lightbox img{max-width:92%;max-height:86%;border-radius:10px}
+    .backtop{position:fixed;right:18px;bottom:88px;background:rgba(255,255,255,0.06);color:#fff;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .theme-toggle{position:fixed;right:18px;bottom:148px;background:rgba(255,255,255,0.04);color:#fff;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .parallax{background-image:linear-gradient(180deg,rgba(10,20,40,0.3),rgba(10,20,40,0.3));padding:18px;border-radius:12px}
     .fade{opacity:0;transform:translateY(8px);animation:fadeIn .6s forwards}
     .delay-1{animation-delay:.12s}
     .delay-2{animation-delay:.22s}
     .delay-3{animation-delay:.32s}
     @keyframes fadeIn{to{opacity:1;transform:none}}
-    @media(max-width:880px){
-      .grid{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
-      .gallery{grid-template-columns:repeat(2,1fr)}
-    }
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
 <body>
@@ -93,11 +87,9 @@
     </nav>
 
     <div class="grid">
-      <!-- main column -->
       <div>
 
-        <!-- ABOUT / SERVICES -->
-        <section id="about" class="card fade delay-3">
+        <section id="about" class="card parallax fade delay-3">
           <h3 class="section-title">About & Services</h3>
           <p style="color:#d6eaf2">I am a product designer and mold engineer with hands-on experience in CAD modelling, mold design (2D & 3D), DFM and CAM programming. I work with NX, Creo and CATIA to deliver production-ready tooling and quick prototyping solutions.</p>
 
@@ -118,7 +110,6 @@
           </div>
         </section>
 
-        <!-- PROJECTS -->
         <section id="projects" style="margin-top:16px">
           <h3 class="section-title">Selected Projects</h3>
           <div class="projects fade delay-2">
@@ -140,25 +131,22 @@
           </div>
         </section>
 
-        <!-- GALLERY -->
         <section id="gallery" class="card" style="margin-top:18px">
           <h3 class="section-title">Gallery</h3>
-          <div class="gallery">
-            <img src="87ce7cd1-c2f4-4363-8776-4ad734bf3513.png" alt="service image" data-full="87ce7cd1-c2f4-4363-8776-4ad734bf3513.png">
-            <img src="f48e9f44-4392-4193-965c-66b507ef99e4.png" alt="profile image" data-full="f48e9f44-4392-4193-965c-66b507ef99e4.png">
-            <img src="8fbd120a-ecf9-4469-bc21-d5f4f3c2cbf6.png" alt="project" data-full="8fbd120a-ecf9-4469-bc21-d5f4f3c2cbf6.png">
-            <img src="39e55e1d-440a-4bc6-be0b-8a6a03d930dc.png" alt="nx mold wizard" data-full="39e55e1d-440a-4bc6-be0b-8a6a03d930dc.png">
-            <img src="87ce7cd1-c2f4-4363-8776-4ad734bf3513.png" alt="service 2" data-full="87ce7cd1-c2f4-4363-8776-4ad734bf3513.png">
-            <img src="f48e9f44-4392-4193-965c-66b507ef99e4.png" alt="profile 2" data-full="f48e9f44-4392-4193-965c-66b507ef99e4.png">
+          <div class="gallery" id="gallery-grid">
+            <img src="gallery1.png" alt="gallery1" data-full="gallery1.png">
+            <img src="gallery2.png" alt="gallery2" data-full="gallery2.png">
+            <img src="gallery3.png" alt="gallery3" data-full="gallery3.png">
+            <img src="gallery4.png" alt="gallery4" data-full="gallery4.png">
+            <img src="gallery5.png" alt="gallery5" data-full="gallery5.png">
+            <img src="gallery6.png" alt="gallery6" data-full="gallery6.png">
           </div>
         </section>
 
-        <!-- RESUME / EXPERIENCE -->
         <section id="resume" class="card" style="margin-top:18px">
           <h3 class="section-title">Resume & Experience</h3>
 
           <div class="timeline">
-            <!-- Timeline items (you can edit text below to match your PDF exactly) -->
             <div class="tl-item">
               <strong>NPD Engineer — Jabil India</strong>
               <div style="color:var(--muted);font-size:13px">April 2024 – Present</div>
@@ -170,8 +158,6 @@
               <div style="color:var(--muted);font-size:13px">2022 – 2024</div>
               <div style="margin-top:6px;color:#d6eaf2">Supported tooling design and prototype development, created mold assemblies and machining drawings, and coordinated with vendors for sample runs.</div>
             </div>
-
-            <!-- Add more timeline items if required -->
           </div>
 
           <h4 style="margin-top:14px">Technical Skills</h4>
@@ -185,7 +171,6 @@
           </div>
 
           <h4 style="margin-top:12px">Skill Proficiency</h4>
-          <!-- skill bars (percentages can be edited) -->
           <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>NX</div><div>90%</div></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
           <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>CATIA</div><div>70%</div></div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
           <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>Creo</div><div>80%</div></div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
@@ -194,14 +179,15 @@
           <div class="skill-row"><div style="display:flex;justify-content:space-between"><div>DFM</div><div>80%</div></div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
 
           <h4 style="margin-top:12px">Education</h4>
-          <div style="color:var(--muted);margin-top:6px">[Add degree(s) & institute here — if you want I can extract exact entries from your PDF and paste them]</div>
+          <ul style="color:var(--muted);margin-top:8px;line-height:1.6">
+            <li><strong>Diploma in Mechanical Engineering (DPMT)</strong> — CIPET; <em>79%</em></li>
+            <li><strong>SSC (10th Standard)</strong> — Maharashtra State Board; <em>79.40%</em></li>
+          </ul>
 
-          <div style="margin-top:12px;color:var(--muted)">Full CV available to download above. If you want the resume text updated to exactly match your PDF, paste the lines here or allow me to copy them into the timeline and job bullets.</div>
         </section>
 
       </div>
 
-      <!-- aside column -->
       <aside>
         <div class="card fade delay-2">
           <h4 style="margin:0 0 8px 0">Contact</h4>
@@ -242,51 +228,67 @@
     </footer>
   </div>
 
-  <!-- floating WhatsApp button -->
-  <div class="whatsapp" title="Chat on WhatsApp">
-    <a href="https://wa.me/918010323462" target="_blank">WA</a>
-  </div>
+  <div class="whatsapp" title="Chat on WhatsApp"><a href="https://wa.me/918010323462" target="_blank">WA</a></div>
+  <div class="backtop" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+  <div class="theme-toggle" title="Toggle theme" onclick="toggleTheme()">🌓</div>
 
-  <!-- lightbox -->
-  <div id="lightbox" class="lightbox" onclick="hideLightbox()">
-    <img id="lightbox-img" src="" alt="preview">
-  </div>
+  <div id="lightbox" class="lightbox" onclick="hideLightbox()"><img id="lightbox-img" src="" alt="preview"></div>
 
-<script>
-  // Lightbox
-  document.querySelectorAll('.gallery img').forEach(img=>{
-    img.addEventListener('click', e=>{
-      const src = img.getAttribute('data-full') || img.src;
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
+  <script>
+    // Lightbox
+    document.querySelectorAll('.gallery img').forEach(img=>{
+      img.addEventListener('click', e=>{
+        const src = img.getAttribute('data-full') || img.src;
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+      });
     });
-  });
-  function hideLightbox(){ document.getElementById('lightbox').style.display='none'; }
+    function hideLightbox(){ document.getElementById('lightbox').style.display='none'; }
 
-  // Contact form: simple mailto fallback (no server)
-  function submitForm(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    if(!name||!email||!message){ document.getElementById('form-msg').textContent = 'Please fill all fields.'; return; }
-    // create mailto link
-    const subject = encodeURIComponent('Website inquiry from ' + name);
-    const body = encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+message);
-    window.location.href = 'mailto:ms2.designtech@gmail.com?subject='+subject+'&body='+body;
-    document.getElementById('form-msg').textContent = 'Opening mail app to send message...';
-  }
+    // Contact form: mailto fallback
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ document.getElementById('form-msg').textContent = 'Please fill all fields.'; return; }
+      const subject = encodeURIComponent('Website inquiry from ' + name);
+      const body = encodeURIComponent('Name: '+name+'
+Email: '+email+'
 
-  // animate skill bars on scroll
-  function animateSkills(){
-    document.querySelectorAll('.bar .fill').forEach(el=>{
-      const w = el.style.width;
-      el.style.width = '0%';
-      setTimeout(()=>el.style.width = w,100);
+'+message);
+      window.location.href = 'mailto:ms2.designtech@gmail.com?subject='+subject+'&body='+body;
+      document.getElementById('form-msg').textContent = 'Opening mail app to send message...';
+    }
+
+    // animate skill bars on load
+    function animateSkills(){
+      document.querySelectorAll('.bar .fill').forEach(el=>{
+        const w = el.style.width || '0%';
+        el.style.width = '0%';
+        setTimeout(()=>el.style.width = w,100);
+      });
+    }
+    window.addEventListener('load', animateSkills);
+
+    // theme toggle (simple)
+    function toggleTheme(){
+      const root = document.documentElement;
+      if(root.style.getPropertyValue('--bg1') === '#071124'){
+        root.style.setProperty('--bg1','#f7fafc'); root.style.setProperty('--bg2','#ffffff'); root.style.setProperty('--muted','#4b5563'); root.style.setProperty('--card','rgba(2,6,23,0.02)'); root.style.setProperty('--accent','#0ea5a4'); document.body.style.color='#062024';
+      } else {
+        root.style.setProperty('--bg1','#071124'); root.style.setProperty('--bg2','#0b1530'); root.style.setProperty('--muted','#9aa6b2'); root.style.setProperty('--card','rgba(255,255,255,0.03)'); root.style.setProperty('--accent','#2dd4bf'); document.body.style.color='#e7f1fb';
+      }
+    }
+
+    // smooth reveal for fade elements
+    document.addEventListener('DOMContentLoaded', function(){
+      const reveal = document.querySelectorAll('.fade');
+      const obs = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+      },{threshold:0.12});
+      reveal.forEach(r=>{ r.classList.add('hidden'); obs.observe(r); });
     });
-  }
-  window.addEventListener('load', animateSkills);
-  window.addEventListener('resize', animateSkills);
-</script>
+  </script>
 </body>
 </html>
