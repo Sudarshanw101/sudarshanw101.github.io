@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sudarshan Wagh — Mold Design Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudarshan Wagh – Mold Design Engineer</title>
 
 <style>
 body{
   margin:0;
-  font-family:Inter,Arial;
+  font-family:Arial, sans-serif;
   background:#071124;
   color:#e7f1fb;
 }
@@ -18,64 +18,66 @@ body{
   padding:20px;
 }
 .card{
-  background:rgba(255,255,255,0.03);
+  background:rgba(255,255,255,0.04);
   padding:16px;
+  border-radius:14px;
+  margin-bottom:20px;
+}
+h1,h3{margin:0 0 10px}
+p{color:#cbd5e1}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+img{
+  width:100%;
   border-radius:12px;
-  margin-bottom:16px;
-}
-h1,h3,h4{margin:0 0 10px}
-.section-title{margin-bottom:10px}
-img{max-width:100%}
-
-.gallery img,.proj-thumb{
   cursor:pointer;
-  border-radius:10px;
 }
 
+/* Project cards */
+.project-card{
+  background:rgba(255,255,255,0.03);
+  padding:12px;
+  border-radius:12px;
+}
+.project-card strong{
+  display:block;
+  margin-top:10px;
+}
+.project-card span{
+  font-size:14px;
+  color:#9aa6b2;
+}
+
+/* Video control */
+.video-box{
+  max-width:100%;
+  border-radius:12px;
+  overflow:hidden;
+}
+.video-box video{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+}
+
+/* Lightbox */
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.9);
+  background:rgba(0,0,0,0.9);
   display:none;
   align-items:center;
   justify-content:center;
-  z-index:2000;
+  z-index:9999;
 }
 .lightbox img{
-  max-width:90%;
+  max-width:92%;
   max-height:90%;
-}
-
-.skill-bar{
-  display:grid;
-  grid-template-columns:120px 1fr 50px;
-  align-items:center;
-  gap:10px;
-  margin:10px 0;
-}
-.skill-bar div{
-  background:#0b1224;
-  border-radius:10px;
-  overflow:hidden;
-}
-.skill-bar i{
-  display:block;
-  height:10px;
-  background:linear-gradient(90deg,#2dd4bf,#0ea5a4);
-}
-button{
-  background:#2dd4bf;
-  border:none;
-  padding:10px 14px;
-  border-radius:8px;
-  font-weight:700;
-}
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin:6px 0;
-  border-radius:8px;
-  border:none;
+  border-radius:12px;
 }
 </style>
 </head>
@@ -87,117 +89,94 @@ input,textarea{
 <div class="card">
   <h1>Sudarshan Wagh</h1>
   <p>NPD Engineer • Mold Design & CAM • Founder — MS² DesignTech</p>
-  <p style="color:#9aa6b2">
-    3+ years experience in injection mold design, DFM, CAM and NPI tooling.
-    Worked with Creative Components, SIP Mold and currently at JABIL India.
+  <p>
+    3+ years of experience in injection mold design, DFM, CAM, ECN/DCN and
+    NPI tooling. Worked at Creative Components, SIP Mold and currently JABIL India.
   </p>
 </div>
 
 <!-- ABOUT & SERVICES -->
 <div class="card">
-  <h3 class="section-title">About & Services</h3>
+<h3>About & Services</h3>
 
-  <div style="display:grid;grid-template-columns:300px 1fr;gap:16px">
-    <!-- IMAGE LEFT -->
-    <img src="87ce7cd1-c2f4-4363-8776-4ad734bf3513.png">
+<div class="grid-2">
+  <!-- IMAGE LEFT -->
+  <img src="87ce7cd1-c2f4-4363-8776-4ad734bf3513.png"
+       onclick="openLightbox(this.src)">
+
+  <!-- TEXT RIGHT -->
+  <div>
+    <p>
+      Product designer and mold engineer with hands-on experience in NX, Creo
+      and CATIA delivering production-ready tooling solutions.
+    </p>
+    <ul>
+      <li>End-to-end Mold Design (2D & 3D)</li>
+      <li>DFM – Draft, Thickness & Sink analysis</li>
+      <li>Prototype & Low-volume tooling</li>
+      <li>CAM programming & machining support</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- SELECTED PROJECTS -->
+<div class="card">
+<h3>Selected Projects</h3>
+
+<div class="grid-2">
+
+  <div class="project-card">
+    <img src="8fbd120a-ecf9-4469-bc21-d5f4f3c2cbf6.png"
          onclick="openLightbox(this.src)">
-
-    <!-- TEXT RIGHT -->
-    <div>
-      <p>
-        Product designer and mold engineer with hands-on experience in NX,
-        Creo and CATIA delivering production-ready tooling solutions.
-      </p>
-      <ul>
-        <li>End-to-end Mold Design (2D & 3D)</li>
-        <li>DFM: Draft, Thickness, Sink analysis</li>
-        <li>Prototype & Low-volume tooling</li>
-        <li>CAM programming & machining support</li>
-      </ul>
-    </div>
+    <strong>Consumer Enclosure Mold</strong>
+    <span>Complete CAD, draft analysis & tooling structure</span>
   </div>
-</div>
 
-<!-- PROJECTS -->
-<div class="card">
-  <h3 class="section-title">Selected Projects</h3>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <div>
-      <img class="proj-thumb"
-           <img src="8fbd120a-ecf9-4469-bc21-d5f4f3c2cbf6.png">
-           onclick="openLightbox(this.src)">
-      <strong>Consumer Enclosure Mold</strong>
-      <p style="color:#9aa6b2">Complete CAD, draft & tooling structure</p>
-    </div>
-
-    <div>
-      <img class="proj-thumb"
-           <img src="39e55e1d-440a-4bc6-be0b-8a6a03d930dc.png">
-           onclick="openLightbox(this.src)">
-      <strong>NX Mold Wizard Automation</strong>
-      <p style="color:#9aa6b2">Template based tooling automation</p>
-    </div>
+  <div class="project-card">
+    <img src="39e55e1d-440a-4bc6-be0b-8a6a03d930dc.png"
+         onclick="openLightbox(this.src)">
+    <strong>NX Mold Wizard Automation</strong>
+    <span>Template-based tooling automation</span>
   </div>
-</div>
-
-<!-- SKILLS GRAPH -->
-<div class="card">
-<h3>Skill Proficiency</h3>
-
-<div class="skill-bar"><span>NX</span><div><i style="width:90%"></i></div><b>90%</b></div>
-<div class="skill-bar"><span>Mold Wizard</span><div><i style="width:85%"></i></div><b>85%</b></div>
-<div class="skill-bar"><span>Creo</span><div><i style="width:80%"></i></div><b>80%</b></div>
-<div class="skill-bar"><span>DFM</span><div><i style="width:80%"></i></div><b>80%</b></div>
-<div class="skill-bar"><span>CAM</span><div><i style="width:75%"></i></div><b>75%</b></div>
-<div class="skill-bar"><span>CATIA</span><div><i style="width:70%"></i></div><b>70%</b></div>
 
 </div>
+</div>
 
-<!-- MOLD VIDEOS -->
+<!-- MOLD ANIMATION VIDEOS -->
 <div class="card">
 <h3>Mold Design Animations</h3>
 
-<video src="mold-opening-animation.mp4" controls muted loop></video>
-       controls muted loop></video>
+<div class="grid-2">
 
-<video src="mold-core-cavity-split.mp4" controls muted loop></video>
-       controls muted loop></video>
+  <div class="video-box">
+    <video src="mold-opening-animation.mp4"
+           controls muted></video>
+    <p>Core–Cavity Mold Opening Sequence</p>
+  </div>
+
+  <div class="video-box">
+    <video src="mold-core-cavity-split.mp4"
+           controls muted></video>
+    <p>Core & Cavity Split Explanation</p>
+  </div>
+
 </div>
-
-<!-- CONTACT -->
-<div class="card">
-<h3>Contact</h3>
-
-<form onsubmit="sendWhatsApp(event)">
-<input id="name" placeholder="Your Name" required>
-<textarea id="message" placeholder="Message" required></textarea>
-<button type="submit">Send WhatsApp</button>
-</form>
-</div>
-
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-<img id="lightbox-img">
+  <img id="lightbox-img">
+</div>
+
 </div>
 
 <script>
 function openLightbox(src){
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox').style.display='flex';
-}
-
-function sendWhatsApp(e){
-  e.preventDefault();
-  const n=document.getElementById('name').value;
-  const m=document.getElementById('message').value;
-  window.open(`https://wa.me/918010323462?text=Hello Sudarshan,%0AName:${n}%0AMessage:${m}`);
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
 }
 </script>
 
 </body>
 </html>
-
-
