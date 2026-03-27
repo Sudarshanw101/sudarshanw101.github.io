@@ -207,6 +207,48 @@ button{
   max-height:90%;
   border-radius:12px;
 }
+  /* ===== OUR CLIENTS CONTINUOUS MARQUEE ===== */
+
+.client-marquee{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  padding:10px 0;
+}
+
+.marquee-track{
+  display:flex;
+  width:max-content;
+  animation:clientsScroll 20s linear infinite;
+}
+
+.marquee-track span{
+  white-space:nowrap;
+  margin-right:60px;
+  font-size:18px;
+  font-weight:600;
+  color:#e7f1fb;
+  letter-spacing:0.4px;
+}
+
+/* Right → Left */
+@keyframes clientsScroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* Pause on hover (premium touch) */
+.client-marquee:hover .marquee-track{
+  animation-play-state:paused;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .marquee-track span{
+    font-size:16px;
+    margin-right:40px;
+  }
+}
 </style>
 </head>
 
@@ -308,7 +350,26 @@ button{
     </div>
   </div>
 </section>
+<!-- OUR CLIENTS -->
+<div class="card">
+  <h3>Our Clients</h3>
 
+  <div class="client-marquee">
+    <div class="marquee-track">
+      <span>Marvel Mold &amp; DIESS</span>
+      <span>Kuvos Tech</span>
+      <span>Dynamic Labs</span>
+      <span>Aaradhya Engineerings</span>
+
+      <!-- duplicate for seamless loop -->
+      <span>Marvel Mold &amp; DIESS</span>
+      <span>Kuvos Tech</span>
+      <span>Dynamic Labs</span>
+      <span>Aaradhya Engineerings</span>
+    </div>
+  </div>
+</div>
+``
 <!-- PROJECTS -->
 <div class="card">
 <h3>Selected Projects</h3>
