@@ -221,7 +221,7 @@ button{
   align-items:center;
   gap:60px;
   width:max-content;
-  animation:clientsScroll 22s linear infinite;
+  animation:clientsScroll 30s linear infinite;
 }
 
 .marquee-track img{
@@ -244,7 +244,14 @@ button{
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
 }
-
+.client-tagline{
+  margin-top:12px;
+  text-align:center;
+  font-size:14px;
+  color:#9aa6b2;
+  letter-spacing:0.4px;
+}
+``
 /* Pause on hover */
 .client-marquee:hover .marquee-track{
   animation-play-state:paused;
@@ -383,7 +390,10 @@ button{
     <img src="MECADO.png" alt="MECADO">
   </div>
 </div>
-
+<p class="client-tagline">
+  Trusted by tooling &amp; manufacturing partners
+</p>
+``
 ``
 <!-- PROJECTS -->
 <div class="card">
