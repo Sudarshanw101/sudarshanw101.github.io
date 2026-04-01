@@ -257,6 +257,26 @@ button{
   animation-play-state:paused;
 }
 
+/* Client tagline */
+.client-tagline{
+  margin-top:14px;
+  text-align:center;
+  font-size:14px;
+  color:#9aa6b2;
+  letter-spacing:0.4px;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .marquee-track{
+    gap:40px;
+  }
+  .marquee-track img{
+    height:40px;
+    max-width:130px;
+  }
+}
+``
 /* Mobile */
 @media (max-width:768px){
   .marquee-track{
@@ -375,25 +395,26 @@ button{
   <h3>Our Clients</h3>
 
   <div class="client-marquee">
-  <div class="marquee-track">
-    <img src="Marvel Mold & DIESS.png" alt="Marvel Mold & DIESS">
-    <img src="Kuvos Tech.png" alt="Kuvos Tech">
-    <img src="Dynamic Labs.png" alt="Dynamic Labs">
-    <img src="Aaradhya Engineerings.png" alt="Aaradhya Engineerings">
-    <img src="MECADO.png" alt="MECADO">
+    <div class="marquee-track">
+      <img src="Marvel Mold & DIESS.png" alt="Marvel Mold & DIESS">
+      <img src="Kuvos Tech.png" alt="Kuvos Tech">
+      <img src="Dynamic Labs.png" alt="Dynamic Labs">
+      <img src="Aaradhya Engineerings.png" alt="Aaradhya Engineerings">
+      <img src="MECADO.png" alt="MECADO">
 
-    <!-- duplicate for seamless loop -->
-    <img src="Marvel Mold & DIESS.png" alt="Marvel Mold & DIESS">
-    <img src="Kuvos Tech.png" alt="Kuvos Tech">
-    <img src="Dynamic Labs.png" alt="Dynamic Labs">
-    <img src="Aaradhya Engineerings.png" alt="Aaradhya Engineerings">
-    <img src="MECADO.png" alt="MECADO">
+      <!-- duplicate for seamless loop -->
+      <img src="Marvel Mold & DIESS.png" alt="">
+      <img src="Kuvos Tech.png" alt="">
+      <img src="Dynamic Labs.png" alt="">
+      <img src="Aaradhya Engineerings.png" alt="">
+      <img src="MECADO.png" alt="">
+    </div>
   </div>
+
+  <p class="client-tagline">
+    Trusted by tooling &amp; manufacturing partners
+  </p>
 </div>
-<p class="client-tagline">
-  Trusted by tooling &amp; manufacturing partners
-</p>
-``
 ``
 <!-- PROJECTS -->
 <div class="card">
